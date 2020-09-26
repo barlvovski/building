@@ -83,6 +83,10 @@ namespace building
             num = mynum;
             city = mycity;
         }
+        public string getAdddress()
+        {
+            return street + num.ToString() + " , " + city;
+        }
 
     }
 
@@ -148,15 +152,40 @@ namespace building
             }
             return (owners);
         }
-
+        public string getAdddress()
+        {
+            return add.getAdddress();
+        }
     }
 
     class Program
     {
         static void Main(string[] args)
         {
-            Building mybuild = new Building("David Ha Melech", 89, "Ramat Gan");
+            int MAX_IN_STREET = 113;
+            Building[] buildings = new Building[MAX_IN_STREET];
+            for (int i = 0; i < MAX_IN_STREET; i++)
+            {
+                Building mybuild = new Building("David Ha Melech", i, "Ramat Gan");
+                buildings[i] = mybuild;
+            }
+
+            //int [] indofmax = new int[MAX_IN_STREET];
+            int max = 0;
+            int indofmax = 0;
+            
+            for (int i = 0; i < MAX_IN_STREET; i++)
+            {
+                int d = buildings[i].getkamutbysize("large"); 
+                if(d > max)
+                {
+                    max = d;
+                }
+
+            }
+                
            
+
 
         }
     }
