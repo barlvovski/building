@@ -173,13 +173,21 @@ namespace building
             //int [] indofmax = new int[MAX_IN_STREET];
             int max = 0;
             int indofmax = 0;
-            
+            int[] arrmaxB = new int[MAX_IN_STREET];
             for (int i = 0; i < MAX_IN_STREET; i++)
             {
                 int d = buildings[i].getkamutbysize("large"); 
                 if(d > max)
                 {
                     max = d;
+                    indofmax = 0;
+                    arrmaxB[indofmax] = i;
+                    
+                }
+                if( d == max)
+                {
+                    indofmax++;
+                    arrmaxB[indofmax] = i;
                 }
 
             }
