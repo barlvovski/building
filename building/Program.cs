@@ -118,6 +118,8 @@ namespace building
         }
 
         public int getkamutbysize(string size)
+
+
         {
             int zover = 0;
             for (int i = 0; i < apps.Length; i++)
